@@ -36,18 +36,20 @@ int main(int argc, char* argv[]) {
     }
         
     // student portion
+    // lambda function to convert number grade to Letter
+    // calls convertLtr to get cstring
     auto letter = [](double grade) -> const char* {
         round(grade);
 
-        return  grade >= 90 ? getLtr(Letter::ap) :
-                grade >= 80 ? getLtr(Letter::a)  :
-                grade >= 75 ? getLtr(Letter::bp) :
-                grade >= 70 ? getLtr(Letter::b)  : 
-                grade >= 65 ? getLtr(Letter::cp) :
-                grade >= 60 ? getLtr(Letter::c)  :
-                grade >= 55 ? getLtr(Letter::dp) :
-                grade >= 50 ? getLtr(Letter::d)  :
-                getLtr(Letter::f);
+        return  grade >= 90 ? convertLtr(Letter::ap) :
+                grade >= 80 ? convertLtr(Letter::a)  :
+                grade >= 75 ? convertLtr(Letter::bp) :
+                grade >= 70 ? convertLtr(Letter::b)  : 
+                grade >= 65 ? convertLtr(Letter::cp) :
+                grade >= 60 ? convertLtr(Letter::c)  :
+                grade >= 55 ? convertLtr(Letter::dp) :
+                grade >= 50 ? convertLtr(Letter::d)  :
+                convertLtr(Letter::f);
     };
 
     try {

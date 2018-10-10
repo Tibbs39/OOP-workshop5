@@ -25,7 +25,7 @@ namespace sict {
 
     // converts Letter to string
     template<typename L>
-    const char* getLtr(const L& letter) {
+    const char* convertLtr(const L& letter) {
         switch (letter) {
             case L::ap : return "A+";
             case L::a  : return "A ";

@@ -18,7 +18,7 @@ namespace sict {
         char* file;
         unsigned int* stuNum;
         double* stuGrade;
-        size_t n;
+        size_t cnt;
 
         // keep move and copy private
         // copy constructor 
@@ -38,10 +38,10 @@ namespace sict {
 
         template <typename T>
         void displayGrades(std::ostream& os, T func) const {
-            for (int i = 0; i < n; ++i) {
+            for (int i = 0; i < cnt; ++i) {
                 std::cout << std::setw(10) << stuNum[i] 
                     << std::setw(6) << std::fixed << std::setprecision(2) 
-                    << stuGrade[i] << std::setw(3) << func(stuGrade[i])
+                    << stuGrade[i] << std::setw(4) << func(stuGrade[i])
                     << std::endl;
             }
         }

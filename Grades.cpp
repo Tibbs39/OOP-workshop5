@@ -14,7 +14,10 @@
 using namespace sict;
 
 Grades::Grades(const char* fileName) {
-    if (fileName) {// check for nullptr
+    // define cnt
+    cnt = 0;
+    
+    if (fileName) { // check for nullptr
         std::ifstream fin(fileName); // open file
         if (fin.fail()) // check if file exists
             throw fileName;
@@ -24,11 +27,11 @@ Grades::Grades(const char* fileName) {
         strcpy(file,fileName);
 
         // count number of lines
-        size_t lnCnt;
         char line[40];
         while (!fin.eof()) {
-            fin.getline(line, 40, '\n');
-            ++lnCnt;
+            fin.getline(line, 40);
+            if (strlen(line) > 1) // to account for blank lines
+                ++cnt;
         }
 
         // go back to beginning of file
@@ -36,13 +39,17 @@ Grades::Grades(const char* fileName) {
         fin.seekg(0,fin.beg);
 
         // create new arrays
-        stuNum = new unsigned int [lnCnt];
-        stuGrade = new double [lnCnt];
-        n = lnCnt;
+        stuNum = new unsigned int [cnt];
+        stuGrade = new double [cnt];
 
         // copy contents of file into array.
-        for (size_t i = 0; i < n; ++i)
-            fin >> stuNum[i] >> stuGrade[i];
+        for (size_t i = 0; i < cnt; ++i)
+            // to account for blank lines
+            if (fin.peek() != '\n' || fin.peek() != '\r') {
+                fin >> stuNum[i] >> stuGrade[i];
+            } else {
+                fin.ignore();
+            }
         
         fin.close();
     }

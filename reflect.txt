@@ -9,4 +9,8 @@
 This workshop I've learned to define lambda expressions,
 prevent the copying, moving and assigning of an object
 as well as throw and report exceptions. I've also learned
-to use enum classes.
+to use enum classes. This workshop has made me consider
+the use cases of creating and throwing exceptions in larger
+projects as well as made me think of scenarios as to why one
+might want to prevent the copying, moving, and assigning of
+an object.

@@ -19,8 +19,12 @@ Grades::Grades(const char* fileName) {
     
     if (fileName) { // check for nullptr
         std::ifstream fin(fileName); // open file
-        if (fin.fail()) // check if file exists
-            throw fileName;
+        if (fin.fail()) {// check if file exists
+            file = nullptr;
+            stuNum = nullptr;
+            stuGrade = nullptr;
+            throw fileName; // throw error
+        }
         
         // create char array and copy file name
         file = new char[strlen(fileName)+1];
@@ -44,7 +48,7 @@ Grades::Grades(const char* fileName) {
 
         // copy contents of file into array.
         for (size_t i = 0; i < cnt; ++i)
-            // to account for blank lines
+            // account for blank lines
             if (fin.peek() != '\n' || fin.peek() != '\r') {
                 fin >> stuNum[i] >> stuGrade[i];
             } else {

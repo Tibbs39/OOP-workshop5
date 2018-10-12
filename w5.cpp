@@ -39,7 +39,7 @@ int main(int argc, char* argv[]) {
     // lambda function to convert number grade to Letter
     // calls convertLtr to get cstring
     auto letter = [](double grade) -> const char* {
-        round(grade);
+        grade = round(grade);
 
         return  grade >= 90 ? convertLtr(Letter::ap) :
                 grade >= 80 ? convertLtr(Letter::a)  :

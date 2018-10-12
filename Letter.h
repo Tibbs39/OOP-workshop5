@@ -27,15 +27,15 @@ namespace sict {
     template<typename L>
     const char* convertLtr(const L& letter) {
         switch (letter) {
-            case L::ap : return "A+ ";
-            case L::a  : return "A  ";
-            case L::bp : return "B+ ";
-            case L::b  : return "B  ";
-            case L::cp : return "C+ ";
-            case L::c  : return "C  ";
-            case L::dp : return "D+ ";
-            case L::d  : return "D  ";
-            case L::f  : return "F  ";
+            case L::ap : return "A+  ";
+            case L::a  : return "A   ";
+            case L::bp : return "B+  ";
+            case L::b  : return "B   ";
+            case L::cp : return "C+  ";
+            case L::c  : return "C   ";
+            case L::dp : return "D+  ";
+            case L::d  : return "D   ";
+            case L::f  : return "F   ";
             default    : return "Invalid";
         }
     }

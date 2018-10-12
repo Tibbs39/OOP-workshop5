@@ -41,7 +41,7 @@ namespace sict {
             for (int i = 0; i < cnt; ++i) {
                 std::cout << std::setw(10) << stuNum[i] 
                     << std::setw(6) << std::fixed << std::setprecision(2) 
-                    << stuGrade[i] << std::setw(4) << func(stuGrade[i])
+                    << stuGrade[i] << std::setw(5) << func(stuGrade[i])
                     << std::endl;
             }
         }

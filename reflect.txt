@@ -1,4 +1,12 @@
+// Name:  Kenneth Yue
+// Seneca Student ID: 127932176
+// Seneca email:  kyue3@myseneca.ca
+// Date of completion: Oct 08, 2018
+//
+// I confirm that the content of this file is created by me,
+// with exception of the parts provided to me by my professor
+
 This workshop I've learned to define lambda expressions,
 prevent the copying, moving and assigning of an object
 as well as throw and report exceptions. I've also learned
-to use enum classes. 
+to use enum classes.

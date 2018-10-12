@@ -1,0 +1,4 @@
+This workshop I've learned to define lambda expressions,
+prevent the copying, moving and assigning of an object
+as well as throw and report exceptions. I've also learned
+to use enum classes. 

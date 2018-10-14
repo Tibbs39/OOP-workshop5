@@ -20,28 +20,29 @@ namespace sict {
         double* stuGrade;
         size_t cnt;
 
-        // keep move and copy private
-        // copy constructor 
-        Grades(Grades&);
-        // copy operator
-        Grades& operator=(Grades&);
-        // move constructor
-        Grades(Grades&&);
-        // move operator
-        Grades& operator=(Grades&&);
-
         public:
             // constructor
             Grades(const char*);
             // destructor
             ~Grades();
+            // prevent move and copy
+            // copy constructor 
+            Grades(Grades&) = delete;
+            // copy operator
+            Grades& operator=(Grades&) = delete;
+            // move constructor
+            Grades(Grades&&) = delete;
+            // move operator
+            Grades& operator=(Grades&&) = delete;
+
 
         template <typename T>
         void displayGrades(std::ostream& os, T func) const {
             for (int i = 0; i < cnt; ++i) {
                 std::cout << std::setw(10) << stuNum[i] 
                     << std::setw(6) << std::fixed << std::setprecision(2) 
-                    << stuGrade[i] << std::setw(5) << func(stuGrade[i])
+                    << stuGrade[i] << " " << std::setw(4) << std::left 
+                    << func(stuGrade[i]) << std::setfill(' ') << std::right
                     << std::endl;
             }
         }

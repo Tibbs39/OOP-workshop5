@@ -15,6 +15,7 @@
 #include <cmath>
 #include "Grades.h"
 #include "Letter.h"
+
 using namespace sict;
 
 int main(int argc, char* argv[]) {
